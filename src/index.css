@@ -1,3 +1,5 @@
+@import "modern-normalize/modern-normalize.css";
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -12,9 +14,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/* html{
-  scrollbar-gutter: stable;
-} */
 
 a {
   font-weight: 500;

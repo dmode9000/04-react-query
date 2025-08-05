@@ -10,7 +10,7 @@ interface MovieGridProps {
 }
 
 const MovieGrid = ({ onSelect, movies }: MovieGridProps) => {
-  console.log("render MovieGrid");
+  //console.log("render MovieGrid");
 
   return (
     <ul className={css.grid}>

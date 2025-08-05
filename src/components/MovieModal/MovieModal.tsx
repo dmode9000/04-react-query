@@ -35,7 +35,8 @@ const MovieModal = ({ movie, onClose }: MovieModalProps) => {
   // обробка заборони прокрутки при відкритій модалці
   useEffect(() => {
     // перевіряю чи є вертикальний скролбар
-    const hasVerticalScrolbar = document.documentElement.scrollHeight > document.documentElement.clientHeight;
+    const hasVerticalScrolbar =
+      document.documentElement.scrollHeight > document.documentElement.clientHeight;
     if (hasVerticalScrolbar) {
       // розрахунок ширини скролбара
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
@@ -58,7 +59,7 @@ const MovieModal = ({ movie, onClose }: MovieModalProps) => {
     if (event.target === event.currentTarget) onClose();
   };
 
-  console.log("render MovieModal");
+  //console.log("render MovieModal");
 
   return createPortal(
     <div className={css.backdrop} role="dialog" aria-modal="true" onClick={handleBackdropClick}>
@@ -66,7 +67,11 @@ const MovieModal = ({ movie, onClose }: MovieModalProps) => {
         <button className={css.closeButton} aria-label="Close modal" onClick={onClose}>
           &times;
         </button>
-        <img src={`https://image.tmdb.org/t/p/original/${poster_path}`} alt={title} className={css.image} />
+        <img
+          src={`https://image.tmdb.org/t/p/original/${poster_path}`}
+          alt={title}
+          className={css.image}
+        />
         <div className={css.content}>
           <h2>{title}</h2>
           <p>{overview}</p>
