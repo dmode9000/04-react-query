@@ -17,7 +17,7 @@ import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import Loader from "../Loader/Loader";
 
 // Types
-import type { ApiSearchResponse, Movie } from "../../types/movie";
+import type { Movie } from "../../types/movie";
 
 // Styles
 import css from "./App.module.css";
@@ -40,7 +40,7 @@ export default function App() {
     isError,
     error,
     isPlaceholderData, // якщо true то очікуються нові дані, а поточні застарілі
-  } = useQuery<ApiSearchResponse, Error>({
+  } = useQuery({
     queryKey: ["movies", searchQuery, currentPage],
     queryFn: () => fetchMovies(searchQuery, currentPage),
     enabled: searchQuery !== "",

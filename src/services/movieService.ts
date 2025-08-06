@@ -1,7 +1,14 @@
 import axios from "axios";
-import type { ApiSearchResponse } from "../types/movie";
+import type { Movie } from "../types/movie";
 
 export const API_TOKEN = import.meta.env.VITE_TMDB_TOKEN;
+
+interface ApiSearchResponse {
+  page: number;
+  results: Movie[];
+  total_pages: number;
+  total_results: number;
+}
 
 export async function fetchMovies(query: string, page: number): Promise<ApiSearchResponse> {
   const response = await axios.get<ApiSearchResponse>(`movie`, {
